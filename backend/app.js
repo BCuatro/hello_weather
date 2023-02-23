@@ -19,15 +19,15 @@ app.get("/:location", async (req, res)=>{
             'https://weatherapi-com.p.rapidapi.com/forecast.json',
             {
                 headers: {
-                    'X-RapidAPI-Key': process.env.X_RAPIDAPI_KEY,
-                    'X-RapidAPI-Host': process.env.X_RAPIDAPI_HOST
+                    'X-RapidAPI-Key': process.env.APIKEY,
+                    'X-RapidAPI-Host': process.env.APIHOST
                 },
                 params: {q: location , days: '7'}
             }
         )
         res.send(locationWeatherResponse.data)
-    } catch(err){
-        console.log(err)
+    } catch(error){
+        res.status(500).json({error: error.message})
     }
 })
 

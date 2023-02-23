@@ -2,25 +2,47 @@ import {React, useState} from 'react'
 import axios from 'axios'
 
 function WeatherDisplay() {
-    const [location, setLocation] = useState("")
+    const [location, setLocation] =useState("")
     const [weatherData, setWeatherData] = useState("")
     const [locationError, setError] = useState("")
-    const locationHandler =(e) =>{
+  
+    const updateLocationHander = (e)=>{
+        e.preventDefault()
+        setLocation(e.currentTarget.value)
 
     }
-    const fetchWeatherHandler = async (place) =>{
+    const fetchWeatherHandler = async (e) =>{
+        e.preventDefault()
         try{
 
-            const weatherResponse = await axios.get(`/${place}`)
-            setWeatherData(weatherResponse)
+            const weatherResponse = await axios.get(`http://localhost:4000/${location}`)
             setError("")
+            setLocation("")
+            setWeatherData(weatherResponse.data)
+            
+          
         } catch(error){
+            setWeatherData("")
             setError(`Can not find the weather for ${location}. Please try again :)`)
         }
     }
+    console.log(weatherData)
   return (
-    <div>WeatherDisplay</div>
-  )
+        <div>
+            <form onSubmit={fetchWeatherHandler}>
+                <input 
+                type="text"
+                value = {location}
+                onChange = {updateLocationHander}
+                />
+                <button type='submit'>Button</button>
+                
+            </form>
+            <div>{weatherData !=="" ? weatherData?.location.name: "Enter Location"}</div>
+            <div>{locationError ? locationError : ""}</div>
+            
+        </div>
+    )
 }
 
 export default WeatherDisplay
