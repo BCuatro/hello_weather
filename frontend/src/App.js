@@ -1,10 +1,11 @@
-import './App.css';
+// import './App.css';
+
 import {Routes, Route, Navigate} from 'react-router-dom'
 import WeatherDisplay from './components/WeatherDisplay';
 
 function App() {
   return (
-    <div className="App">
+    <div class="flex items-center justify-center h-screen">
       {/* <header className="App-header">
         <p>
           Edit <code>src/App.js</code> and save to reload.

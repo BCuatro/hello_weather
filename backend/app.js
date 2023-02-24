@@ -7,6 +7,7 @@ require('dotenv').config()
 
 app.use(cors())
 
+
 app.get("/", (req, res) =>{
     res.send("Server is running")
 })
