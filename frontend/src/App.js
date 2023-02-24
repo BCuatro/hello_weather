@@ -5,7 +5,7 @@ import WeatherDisplay from './components/WeatherDisplay';
 
 function App() {
   return (
-    <div class="flex items-center justify-center h-screen">
+    <div class="flex items-center justify-center h-screen w-screen">
       {/* <header className="App-header">
         <p>
           Edit <code>src/App.js</code> and save to reload.
