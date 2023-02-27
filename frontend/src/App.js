@@ -1,11 +1,10 @@
-// import './App.css';
-
 import {Routes, Route, Navigate} from 'react-router-dom'
-import WeatherDisplay from './components/WeatherDisplay';
+import Weather from './components/Weather';
+
 
 function App() {
   return (
-    <div class="flex items-center justify-center h-screen w-screen">
+    <div class="flex items-center justify-center h-screen w-screen font-shrikhand  bg-[url('./images/background_image.jpg')] bg-cover">
       {/* <header className="App-header">
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -20,7 +19,7 @@ function App() {
         </a>
       </header> */}
       <Routes>
-        <Route path = '/' element = {<WeatherDisplay />} />
+        <Route path = '/' element = {<Weather />} />
         <Route path = '*' element = {<Navigate to = '/' />} />
       </Routes>
     </div>
