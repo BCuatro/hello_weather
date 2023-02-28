@@ -18,7 +18,7 @@ app.use(cors())
 //     res.send("Server is running")
 // })
 
-app.get("/:location", async (req, res)=>{
+app.get("/api/:location", async (req, res)=>{
     const location = req.params.location
 
     try{
