@@ -1,0 +1,21 @@
+{
+  "name": "hello_weather",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd backend && node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BCuatro/hello_weather.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BCuatro/hello_weather/issues"
+  },
+  "homepage": "https://github.com/BCuatro/hello_weather#readme"
+}
