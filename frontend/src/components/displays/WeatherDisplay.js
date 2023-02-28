@@ -15,14 +15,14 @@ const WeatherDisplay = ({weather, temperatureUnit}) => {
 
   return (
     <div className='font-shrikhand'>
-      <div className ='flex w-full justify-between p-3'>
-        <div className = 'w-3/4 text-color-F1F8FF'> 
-              <div className = 'text-color-F1F8FF text-2xl'> {weather ? weather.location.name + ' , ' +  weather.location.region : ''} </div>
+      <div className ='flex w-full justify-between'>
+        <div className = 'w-3/4 text-color-F1F8FF p-3'> 
+              <div className = 'text-color-F1F8FF text-2xl' > {weather ? weather.location.name + ' , ' +  weather.location.region : ''} </div>
               <div> {weather ? weather.location.country :''} </div>
         </div>
 
         <div className='flex-row'>
-          <div className ='w-3/4'> <img className= 'h-auto w-full' src = {weather ? weather.current.condition.icon: ''} alt =''></img></div>
+          <div className ='w-full flex justify-center'> <img className= 'h-auto w-24' src = {weather ? weather.current.condition.icon: ''} alt =''></img></div>
           <div className='text-center text-color-EEEEEE'>{weather ? weather.current.condition.text : ''}</div>
         </div>
 
