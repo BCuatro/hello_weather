@@ -19,8 +19,8 @@ function App() {
         </a>
       </header> */}
       <Routes>
-        <Route path = '/hello_weather' element = {<Weather />} />
-        <Route path = '*' element = {<Navigate to = '/hello_weather' />} />
+        <Route path = '/' element = {<Weather />} />
+        <Route path = '*' element = {<Navigate to = '/' />} />
       </Routes>
     </div>
   );
