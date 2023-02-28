@@ -21,7 +21,7 @@ function Weather() {
         e.preventDefault()
         try{
 
-            const weatherResponse = await axios.get(`http://localhost:4000/${location}`)
+            const weatherResponse = await axios.get(`/${location}`)
             setError('')
             setLocation('')
             setWeatherData(weatherResponse.data)
