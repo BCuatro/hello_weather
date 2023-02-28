@@ -14,9 +14,9 @@ if (process.env.NODE_ENV === 'production') {
 app.use(cors())
 
 
-app.get("/", (req, res) =>{
-    res.send("Server is running")
-})
+// app.get("/", (req, res) =>{
+//     res.send("Server is running")
+// })
 
 app.get("/:location", async (req, res)=>{
     const location = req.params.location
