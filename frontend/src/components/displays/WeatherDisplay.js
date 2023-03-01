@@ -21,19 +21,19 @@ const WeatherDisplay = ({weather, temperatureUnit}) => {
               <div> {weather ? weather.location.country :''} </div>
         </div>
 
-        <div className='flex-row'>
+        <div className='flex-row mr-3 pr-5'>
           <div className ='w-full flex justify-center'> <img className= 'h-auto w-20 md:w-24' src = {weather ? weather.current.condition.icon: ''} alt =''></img></div>
           <div className='text-center text-color-EEEEEE'>{weather ? weather.current.condition.text : ''}</div>
         </div>
 
       </div>
 
-      <div className= 'text-center w-full'>
+      <div className= 'text-center w-11/12'>
         <div className ='text-xl text-color-F1F8FF'> Currently:</div>
         <div class='text-4xl text-color-EEEEEE font-play'>{temperatureUnit === 'F'? temperatureInF?.current : temperatureInC?.current} °{temperatureUnit}</div>
       </div> 
 
-      <div className='flex w-full justify-around p-0 text-center'>
+      <div className='flex justify-around w-11/12 text-center'>
         <div className='w-1/3 text-center'>
           <div className ='text-xl text-color-F1F8FF'> Low</div>
           <div className='text-2xl text-color-EEEEEE font-play'>{temperatureUnit === 'F'? temperatureInF?.min : temperatureInC?.min} °{temperatureUnit} </div>
@@ -46,7 +46,7 @@ const WeatherDisplay = ({weather, temperatureUnit}) => {
 
       </div>
 
-      <div className= 'flex-row text-center w-full pt-3'>
+      <div className= 'flex-row text-center w-11/12 pt-3'>
         <div className ='text-xl text-color-F1F8FF'> Possible Condition</div>
         <div className='flex justify-evenly items-center'>
           <div className=' text-color-EEEEEE'>{weather ? weather.forecast.forecastday[0].day.condition.text : ""} </div>
