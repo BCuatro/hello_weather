@@ -15,7 +15,7 @@ const WeatherDisplay = ({weather, temperatureUnit}) => {
 
   return (
     <div className='font-shrikhand'>
-      <div className = 'w-full pl-3'>Today's Forcast</div>
+      <div className = 'w-full mt-1 pl-3'>Today's Forcast</div>
       <div className ='flex w-full justify-between'>
         <div className = 'w-3/4 text-color-F1F8FF pl-3'> 
               <div className = 'text-color-F1F8FF text-xl md:text-2xl' > {weather ? weather.location.name + ' , ' +  weather.location.region : ''} </div>
@@ -28,13 +28,13 @@ const WeatherDisplay = ({weather, temperatureUnit}) => {
         </div>
 
       </div>
-
-      <div className= 'text-center w-11/12'>
+      
+      <div className= 'text-center w-11/12 md:pl-5 '>
         <div className ='text-xl text-color-F1F8FF'> Currently:</div>
         <div class='text-4xl text-color-EEEEEE font-play'>{temperatureUnit === 'F'? temperatureInF?.current : temperatureInC?.current} °{temperatureUnit}</div>
       </div> 
 
-      <div className='flex justify-around w-11/12 text-center'>
+      <div className='flex justify-around w-11/12 text-center md:pl-5'>
         <div className='w-1/3 text-center'>
           <div className ='text-xl text-color-F1F8FF'> Low</div>
           <div className='text-2xl text-color-EEEEEE font-play'>{temperatureUnit === 'F'? temperatureInF?.min : temperatureInC?.min} °{temperatureUnit} </div>
@@ -47,7 +47,7 @@ const WeatherDisplay = ({weather, temperatureUnit}) => {
 
       </div>
 
-      <div className= 'flex-row text-center w-11/12 pt-3'>
+      <div className= 'flex-row text-center w-11/12 pt-3 md:pl-5'>
         <div className ='text-xl text-color-F1F8FF'> Possible Condition</div>
         <div className='flex justify-evenly items-center'>
           <div className=' text-color-EEEEEE'>{weather ? weather.forecast.forecastday[0].day.condition.text : ""} </div>
