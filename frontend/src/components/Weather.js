@@ -56,8 +56,8 @@ function Weather() {
     }
 
   return (
-        <div >
-            <div className = 'flex w-full text-5xl justify-center  line tracking-wider text-color-F1F8FF'>
+        <div className= 'w-[400px] md:w-[600px] min-h-[650] h-full'>
+            <div className = 'mt-3 flex w-full text-4xl md:text-5xl justify-center  line tracking-wider text-color-F1F8FF'>
                 <div className ='animate-bounce animation-delay-800'>T</div>
                 <div className ='animate-bounce animation-delay-900'>O</div>
                 <div className ='animate-bounce animation-delay-1000'>D</div>
@@ -68,16 +68,16 @@ function Weather() {
               
                
             </div>
-            <div className = 'text-8xl tracking-wide'>WEATHER</div>
+            <div className = 'text-6xl md:text-8xl tracking-wide text-center'>WEATHER</div>
             
-            <div className='h-[450px] w-[600px] p-4 border-4 border-dashed bg-color-425C81 border-black rounded-2xl mb-3'> 
+            <div className='h-[450px] p-4 border-4 border-dashed bg-color-425C81 border-black rounded-2xl mb-3'> 
                 <div className='h-full'> {currentDisplayHandler()}</div>
             </div>
             
             <form onSubmit={fetchWeatherHandler}>
                 <div className ='flex'> 
                     <input 
-                    className ='w-5/6 block appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline font-play' 
+                    className ='w-5/6 block appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline font-play placeholder:italic placeholder:text-sm placeholder:md:text-base' 
                     type='text'
                     value = {location}
                     placeholder = {'ex. New York or New York, NY or 10037'}

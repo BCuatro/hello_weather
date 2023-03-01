@@ -20,9 +20,9 @@ module.exports = {
 
       },
       keyframes:{
-        bounce:{
+        bounce: {
           '50%': {
-            transform: `translateY(-75%);
+            transform: `translateY(-40%);
             animation-timing-function: cubic-bezier(0, 0, 0.2, 1)`
           },
           '0%, 100%': {
@@ -34,6 +34,7 @@ module.exports = {
       animation: {
         'bounce': 'bounce 1.5s infinite',
       }
+     
     },
   },
   

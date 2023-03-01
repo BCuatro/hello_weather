@@ -17,12 +17,12 @@ const WeatherDisplay = ({weather, temperatureUnit}) => {
     <div className='font-shrikhand'>
       <div className ='flex w-full justify-between'>
         <div className = 'w-3/4 text-color-F1F8FF p-3'> 
-              <div className = 'text-color-F1F8FF text-2xl' > {weather ? weather.location.name + ' , ' +  weather.location.region : ''} </div>
+              <div className = 'text-color-F1F8FF text-xl md:text-2xl' > {weather ? weather.location.name + ' , ' +  weather.location.region : ''} </div>
               <div> {weather ? weather.location.country :''} </div>
         </div>
 
         <div className='flex-row'>
-          <div className ='w-full flex justify-center'> <img className= 'h-auto w-24' src = {weather ? weather.current.condition.icon: ''} alt =''></img></div>
+          <div className ='w-full flex justify-center'> <img className= 'h-auto w-20 md:w-24' src = {weather ? weather.current.condition.icon: ''} alt =''></img></div>
           <div className='text-center text-color-EEEEEE'>{weather ? weather.current.condition.text : ''}</div>
         </div>
 
@@ -50,7 +50,7 @@ const WeatherDisplay = ({weather, temperatureUnit}) => {
         <div className ='text-xl text-color-F1F8FF'> Possible Condition</div>
         <div className='flex justify-evenly items-center'>
           <div className=' text-color-EEEEEE'>{weather ? weather.forecast.forecastday[0].day.condition.text : ""} </div>
-          <div><img className= 'h-24 w-24' src= {weather ? weather.forecast.forecastday[0].day.condition.icon : ""} alt=""></img> </div>
+          <div><img className= 'h-auto w-20 md:w-24' src= {weather ? weather.forecast.forecastday[0].day.condition.icon : ""} alt=""></img> </div>
         </div>
         
       </div>    
