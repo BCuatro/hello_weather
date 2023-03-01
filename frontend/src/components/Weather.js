@@ -59,7 +59,8 @@ function Weather() {
         }
     }
    
-    const flipAttributeHandler = () =>{
+    const flipAttributeHandler = (e) =>{
+        e.preventDefault();
         if (flipAttribute === ""){
             setFlipAttribute('rotationY-180')
         }else{
@@ -117,8 +118,8 @@ function Weather() {
                 onClick = {() => temperatureUnitHandler()}>{temperatureUnit === 'F' ? 'Fahrenheit' : 'Celsius'}
             </button>    
             <button 
-                className ='w-60 h-10 text-play text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 justify-center text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mt-2 mr-2 mb-2'
-                onClick = {() => flipAttributeHandler()}>{flipAttribute === 'rotationY-180' ? "Today's Forcast" : '3 Day Forcast'}
+                className ={`w-60 h-10 text-play text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 justify-center text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mt-2 mr-2 mb-2 ${weatherData ? '' : 'hidden'}`}
+                onClick = {(e) => flipAttributeHandler(e)}>{flipAttribute === 'rotationY-180' ? "Today's Forcast" : '3 Day Forcast'}
             </button>         
         </div>
     )

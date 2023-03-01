@@ -13,7 +13,7 @@ const ForecastItem =({forecastDay, temperatureUnit}) =>{
     <div className= 'h-full w-full'>
         <div className = 'h-full flex-col'>
             <div className= 'h-3/4 pt-3'> 
-                <div className ='text-center text-xl'> Date: {forecastDay ? forecastDay.date.slice(5) : ""}</div>
+                <div className ='text-center text-base md:text-xl'> Date: {forecastDay ? forecastDay.date.slice(5) : ""}</div>
                 <div className='flex-row'>
                     <div className ='w-full flex justify-center'> <img className= 'h-auto w-20 md:w-24' src = {forecastDay ? forecastDay.day.condition.icon: ''} alt =''></img></div>
                     <div className='text-center text-color-EEEEEE'>{forecastDay ? forecastDay.day.condition.text : ''}</div>
@@ -22,13 +22,13 @@ const ForecastItem =({forecastDay, temperatureUnit}) =>{
         
             <div className ='w-full p-2'>
                 <div className='flex justify-between'>
-                    <div className ='text-xl text-color-F1F8FF'> Low </div>
-                    <div className='text-xl text-color-EEEEEE font-play'>{temperatureUnit === 'F'? temperatureInF?.min : temperatureInC?.min} °{temperatureUnit} </div>
+                    <div className ='text-base md:text-xl text-color-F1F8FF'> Low </div>
+                    <div className='text-base md:text-xl text-color-EEEEEE font-play'>{temperatureUnit === 'F'? temperatureInF?.min : temperatureInC?.min} °{temperatureUnit} </div>
                 </div>
 
                 <div className='flex justify-between'>
-                    <div className ='text-xl text-color-F1F8FF'> High</div>
-                    <div className='text-xl text-color-EEEEEE font-play'>{temperatureUnit === 'F'? temperatureInF?.max : temperatureInC?.max} °{temperatureUnit} </div>
+                    <div className ='text-base md:text-xl text-color-F1F8FF'> High</div>
+                    <div className='text-base md:text-xl text-color-EEEEEE font-play'>{temperatureUnit === 'F'? temperatureInF?.max : temperatureInC?.max} °{temperatureUnit} </div>
                 </div>
             </div>
         </div>
