@@ -15,8 +15,9 @@ const WeatherDisplay = ({weather, temperatureUnit}) => {
 
   return (
     <div className='font-shrikhand'>
+      <div className = 'w-full pl-3'>Today's Forcast</div>
       <div className ='flex w-full justify-between'>
-        <div className = 'w-3/4 text-color-F1F8FF p-3'> 
+        <div className = 'w-3/4 text-color-F1F8FF pl-3'> 
               <div className = 'text-color-F1F8FF text-xl md:text-2xl' > {weather ? weather.location.name + ' , ' +  weather.location.region : ''} </div>
               <div> {weather ? weather.location.country :''} </div>
         </div>

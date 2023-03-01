@@ -1,6 +1,7 @@
 import {React, useState} from 'react'
 import axios from 'axios'
 import WeatherDisplay from './displays/WeatherDisplay';
+import ForecastDisplay from './displays/ForecastDisplay';
 import InitialEnterLocationDisplay from './displays/InitialEnterLocationDisplay';
 import ErrorDisplay from './displays/ErrorDisplay';
 
@@ -11,7 +12,7 @@ function Weather() {
     const [location, setLocation] =useState('')
     const [weatherData, setWeatherData] = useState('')
     const [locationError, setError] = useState('')
-    const [spinAttribute, setSpin]= useState('')
+    const [flipAttribute, setFlipAttribute]= useState('')
   
     const updateLocationHander = (e)=>{
         e.preventDefault()
@@ -25,12 +26,13 @@ function Weather() {
             const weatherResponse = await axios.get(`/api/${location}`)
             setError('')
             setLocation('')
-            setSpin('')
+            setFlipAttribute('')
             setWeatherData(weatherResponse.data)
             
           
         } catch(error){
             setWeatherData('')
+            setFlipAttribute('')
             setError(`Can not find the weather for ${location}.`)
         }
     }
@@ -57,11 +59,11 @@ function Weather() {
         }
     }
    
-    const spinHandler = () =>{
-        if (spinAttribute === ""){
-            setSpin('rotationY-180')
+    const flipAttributeHandler = () =>{
+        if (flipAttribute === ""){
+            setFlipAttribute('rotationY-180')
         }else{
-            setSpin('')
+            setFlipAttribute('')
         }
        
     }
@@ -82,9 +84,15 @@ function Weather() {
             </div>
             <div className = 'text-6xl md:text-8xl tracking-wide text-center'>WEATHER</div>
             <div className ='cursor-pointer group perspective'>
-                <div className= {`h-[450px] w-full relative preserve-3d ${spinAttribute} duration-1000 p-4 border-4 border-dashed bg-color-425C81 border-black rounded-2xl mb-3`}> 
+                <div className= {`h-[450px] w-full relative preserve-3d ${flipAttribute} duration-1000 p-4 border-4 border-dashed  bg-color-425C81 border-black rounded-2xl mb-3`}> 
                     <div className=' absolute h-full w-full backface-hidden '> {currentDisplayHandler()}</div>
-                    <div className = "absolute h-full w-full top-0 left-0 p-3 rotationY-180 backface-hidden">Hello</div>
+                    <div className = "absolute h-full w-full top-0 left-0 p-3 rotationY-180 backface-hidden">
+                        <ForecastDisplay 
+                        weather = {weatherData}
+                        flipAttributeHandler = {flipAttribute}
+                        temperatureUnit = {temperatureUnit}
+                        />
+                    </div>
                 </div>
 
             </div>
@@ -113,7 +121,7 @@ function Weather() {
             </button>    
             <button 
                 className ='w-36 text-play text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 justify-center text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mt-2 mr-2 mb-2'
-                onClick = {() => spinHandler()}>button
+                onClick = {() => flipAttributeHandler()}>button
             </button>         
         </div>
     )

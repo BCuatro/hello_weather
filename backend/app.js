@@ -29,7 +29,7 @@ app.get("/api/:location", async (req, res)=>{
                     'X-RapidAPI-Key': process.env.APIKEY,
                     'X-RapidAPI-Host': process.env.APIHOST
                 },
-                params: {q: location , days: '7'}
+                params: {q: location , days: '3'}
             }
         )
         res.send(locationWeatherResponse.data)
