@@ -4,17 +4,14 @@ const plugin = require("tailwindcss/plugin");
 
 const CardFlip = plugin(function ({ addUtilities }) {
   addUtilities({
-    ".rotationY-180": {
-      transform: "rotateY(180deg)",
+    ".rotationX-360": {
+      transform: "rotatex(360deg)",
     },
     ".preserve-3d": {
       transformStyle: "preserve-3d",
     },
     ".perspective": {
       perspective: "1000px",
-    },
-    ".backface-hidden": {
-      backfaceVisibility: "hidden",
     },
   });
 });
@@ -26,6 +23,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      scale: {
+        'n100': '-1',
+      },
       fontFamily: {
         'shrikhand': ['Shrikhand'],
         'play':['Play']

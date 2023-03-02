@@ -4,7 +4,7 @@ import Weather from './components/Weather';
 
 function App() {
   return (
-    <div class="flex items-center justify-center min-h-screen w-screen font-shrikhand bg-[url('./images/background_image.jpg')] bg-cover">
+    <div className="flex items-center justify-center min-h-screen w-screen font-shrikhand bg-[url('./images/background_image.jpg')] bg-cover">
       {/* <header className="App-header">
         <p>
           Edit <code>src/App.js</code> and save to reload.

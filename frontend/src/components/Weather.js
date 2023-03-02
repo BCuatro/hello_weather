@@ -13,6 +13,7 @@ function Weather() {
     const [weatherData, setWeatherData] = useState('')
     const [locationError, setError] = useState('')
     const [flipAttribute, setFlipAttribute]= useState('')
+    const [visibilityAttribute, setVisibility] = useState({dailyForecast:'visible', threeDayForecast:'hidden'})
   
     const updateLocationHander = (e)=>{
         e.preventDefault()
@@ -33,6 +34,7 @@ function Weather() {
         } catch(error){
             setWeatherData('')
             setFlipAttribute('')
+            setVisibility({dailyForecast:'visible', threeDayForecast:'hidden'})
             setError(`Can not find the weather for ${location}.`)
         }
     }
@@ -62,9 +64,11 @@ function Weather() {
     const flipAttributeHandler = (e) =>{
         e.preventDefault();
         if (flipAttribute === ""){
-            setFlipAttribute('rotationY-180')
+            setFlipAttribute('rotationX-360')
+            setVisibility({dailyForecast:'hidden', threeDayForecast:'visible'})
         }else{
             setFlipAttribute('')
+            setVisibility({dailyForecast:'visible', threeDayForecast:'hidden'})
         }
        
     }
@@ -83,12 +87,12 @@ function Weather() {
             <div className = 'text-6xl md:text-8xl tracking-wide text-center'>WEATHER</div>
             <div className ='cursor-pointer group perspective'>
                 <div className= {`h-[450px] w-full relative preserve-3d ${flipAttribute} duration-1000 p-4 border-4 border-dashed  bg-color-425C81 border-black rounded-2xl mb-3`}> 
-                    <div className=' absolute h-full w-full backface-hidden top-0 left-0 '> {currentDisplayHandler()}</div>
-                    <div className = "absolute h-full w-full top-0 left-0 p-3 rotationY-180 backface-hidden">
-                        <ForecastDisplay 
+                    <div className={`absolute h-full w-full top-0 left-0  ${visibilityAttribute.dailyForecast}`}> {currentDisplayHandler()}</div>
+                    <div className = {`absolute visible h-full w-full top-0 left-0 p-3 ${visibilityAttribute.threeDayForecast}`}>
+                    <ForecastDisplay 
                         weather = {weatherData}
                         temperatureUnit = {temperatureUnit}
-                        />
+                        /> 
                     </div>
                 </div>
 
