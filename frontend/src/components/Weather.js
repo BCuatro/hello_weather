@@ -87,7 +87,6 @@ function Weather() {
                     <div className = "absolute h-full w-full top-0 left-0 p-3 rotationY-180 backface-hidden">
                         <ForecastDisplay 
                         weather = {weatherData}
-                        flipAttributeHandler = {flipAttribute}
                         temperatureUnit = {temperatureUnit}
                         />
                     </div>
