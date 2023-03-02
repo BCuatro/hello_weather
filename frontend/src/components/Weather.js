@@ -28,6 +28,7 @@ function Weather() {
             setError('')
             setLocation('')
             setFlipAttribute('')
+            setVisibility({dailyForecast:'visible', threeDayForecast:'hidden'})
             setWeatherData(weatherResponse.data)
             
           
