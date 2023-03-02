@@ -35,7 +35,7 @@ function Weather() {
             setWeatherData('')
             setFlipAttribute('')
             setVisibility({dailyForecast:'visible', threeDayForecast:'hidden'})
-            setError(`Can not find the weather for ${location}.`)
+            setError(`Cannot find the weather for ${location}.`)
         }
     }
     const currentDisplayHandler = () =>{
